@@ -1,0 +1,43 @@
+{
+  "name": "asteridux",
+  "version": "1.0.0",
+  "description": "Library starter for all asteridux projects",
+  "main": "./build/lib.js",
+  "scripts": {
+    "release:init": "standard-version --first-release",
+    "release": "standard-version",
+    "prepublish": "npm run build",
+    "build": "webpack",
+    "watch:build": "webpack --watch",
+    "prebuild:rollup": "rimraf build && mkdri build",
+    "build:rollup": "rollup --config",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asteridux/asteridux.git"
+  },
+  "author": "Antonin Januska <antonin@antjanus.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asteridux/asteridux/issues"
+  },
+  "homepage": "https://github.com/asteridux/asteridux#readme",
+  "devDependencies": {
+    "babel-core": "6.25.0",
+    "babel-jest": "20.0.3",
+    "babel-loader": "7.1.1",
+    "babel-preset-env": "1.6.0",
+    "jest": "20.0.4",
+    "rimraf": "2.6.1",
+    "rollup-plugin-babel": "2.7.1",
+    "standard-version": "4.2.0",
+    "webpack": "3.3.0"
+  },
+  "jest": {
+    "bail": true,
+    "collectCoverage": true,
+    "verbose": true
+  }
+}
